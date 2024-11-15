@@ -1,0 +1,26 @@
+name: bram_theme
+type: theme
+base theme: false
+version: 1.2.0
+core_version_requirement: ^10
+description: Theme for bram_theme
+author: Bram
+'interface translation project': bram_theme
+'interface translation server pattern': 'themes/custom/%project/translations/%project.%language.po'
+
+dependencies:
+  - paragraphs:paragraphs
+
+regions:
+  header: 'Header'
+  primary_menu: 'Primary menu'
+  secondary_menu: 'Secondary menu'
+  highlighted: 'Highlighted'
+  content: 'Content'
+  sidebar: 'Sidebar'
+  footer: 'Footer'
+  breadcrumb: 'Breadcrumb'
+
+libraries:
+  - bram_theme/bram_theme
+  - bram_theme/fontawesome

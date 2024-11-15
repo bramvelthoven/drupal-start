@@ -1,0 +1,24 @@
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--' ~ paragraph.bundle|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished',
+  ]
+%}
+
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }}>
+    {% block paragraph_header %}
+      {% if paragraph.field_title.value  %}
+        {% include 'bram_theme:title' with {
+          'element': 'h2',
+          'title': paragraph.field_title.value,
+        } %}
+      {% endif %}
+    {% endblock %}
+
+    {% block paragraph_content %}
+      {{ content|without('field_title') }}
+    {% endblock %}
+  </div>
+{% endblock paragraph %}

@@ -1,0 +1,7 @@
+<{{ element ? element : 'figure' }} {{ attributes.addClass('image') }}>
+  {{ image|raw }}
+
+  {% if caption %}
+    <figcaption>{{ caption }}</figcaption>
+  {% endif %}
+</{{ element ? element : 'figure' }}

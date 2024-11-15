@@ -1,0 +1,35 @@
+.slider {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-m);
+  position: relative;
+  width: 100%;
+
+  &__swiper {
+    display: block;
+    height: 100%;
+    list-style: none;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+  }
+
+  &__wrapper {
+    box-sizing: content-box;
+    display: flex;
+    gap: var(--space-m);
+    height: 100%;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+  }
+
+  &__arrows {
+    display: flex;
+    gap: var(--space-m);
+  }
+}

@@ -1,0 +1,9 @@
+{% set classes = [
+  icon_style ? 'fa-' ~ icon_style : 'fa-solid',
+  icon_type ? 'fa-' ~ icon_type,
+  'fa-fw',
+  'fa-icon',
+]
+%}
+
+<i {{ attributes.addClass(classes) }} aria-hidden="true"></i>

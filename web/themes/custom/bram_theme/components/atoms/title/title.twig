@@ -1,0 +1,17 @@
+{% set classes = [
+  'title',
+  style ? 'title--' ~ style,
+]
+%}
+
+<{{ element ? element:'h2' }} {{ attributes.addClass(classes) }}>
+  {% if url %}
+    <a href={{ url }}>
+  {% endif %}
+
+    {{ title }}
+
+  {% if url %}
+    </a>
+  {% endif %}
+</{{ element ? element:'h2' }}>

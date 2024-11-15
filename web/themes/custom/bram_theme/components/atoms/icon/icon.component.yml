@@ -1,0 +1,27 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
+name: Icon
+status: stable
+description: Fontawesome icon component.
+libraryDependencies:
+  - bram_theme/fontawesome
+props:
+  type: object
+  required:
+    - icon_type
+  properties:
+    icon_type:
+      type: string
+      title: Icon
+      description: The icon name without fa-
+    icon_style:
+      type: string
+      title: Icon Style
+      description: The icon style without fa-.
+      enum:
+        - solid
+        - regular
+        - light
+        - duotone
+        - thin
+        - brands
+      default: solid

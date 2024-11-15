@@ -1,0 +1,5 @@
+main {
+  &:has(aside) {
+    grid-template-columns: [content] 10fr [sidebar] 2fr;
+  }
+}

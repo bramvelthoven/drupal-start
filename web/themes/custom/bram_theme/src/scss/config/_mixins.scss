@@ -1,0 +1,11 @@
+@mixin underline-hover($thickness: 0.1em) {
+  text-decoration-color: rgb(0 0 0 / 0%);
+  text-decoration-line: underline;
+  text-decoration-thickness: $thickness;
+  text-underline-offset: 0.2em;
+  transition: text-decoration-color 300ms;
+
+  &:hover {
+    text-decoration-color: inherit;
+  }
+}

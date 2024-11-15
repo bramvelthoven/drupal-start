@@ -1,0 +1,46 @@
+{% set classes = [
+  link_type ? link_type : 'link',
+  link_style ? link_type ~ '--' ~ link_style,
+]
+%}
+
+{% set element = link_type == 'button' ? 'button' : 'a' %}
+
+{% if id %}
+  {% set attributes = attributes.setAttribute('id', id) %}
+{% endif %}
+
+{% if href is not empty %}
+  {% set attributes = attributes.setAttribute('href', href) %}
+{% endif %}
+
+{% if aria_label %}
+  {% set attributes = attributes.setAttribute('aria-label', aria_label) %}
+{% endif %}
+
+{% if aria_expanded %}
+  {% set attributes = attributes.setAttribute('aria-expanded', aria_expanded) %}
+{% endif %}
+
+{% if aria_controls %}
+  {% set attributes = attributes.setAttribute('aria-controls', aria_controls) %}
+{% endif %}
+
+<{{ element }} {{ attributes.addClass(classes) }}>
+  {% if icon_type %}
+    {% include active_theme() ~ ':icon' with {
+      icon_type: icon_type|default(''),
+      icon_style: icon_style|default('solid'),
+    } only %}
+  {% endif %}
+
+  {% if icon_only %}
+    {% if sr_label %}
+      <span class="sr-only">{{ sr_label|t }}</span>
+    {% else %}
+      <span class="sr-only">{{ 'Read more about @label'|t ({'@label': label }) }}</span>
+    {% endif %}
+  {% else %}
+    {{ label|t }}
+  {% endif %}
+</{{ element }}>

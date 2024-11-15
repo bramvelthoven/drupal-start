@@ -1,0 +1,33 @@
+{#
+/**
+* @file
+* Theme override to display a single page.
+*
+* @see template_preprocess_page()
+* @see html.html.twig
+*/
+#}
+<div class="u-container">
+  {% include '@bram_theme/layout/header.html.twig' %}
+</div>
+<div class="u-container">
+  {% if page.highlighted %}
+    <div class="highlighted">
+      {{ page.highlighted }}
+    </div>
+  {% endif %}
+  <main id="main-content">
+    <div class="content">
+      {{ page.content }}
+    </div>
+    {% if page.sidebar %}
+      <aside class="sidebar" role="complementary">
+        {{ page.sidebar }}
+      </aside>
+    {% endif %}
+  </main>
+</div>
+<div class="u-container">
+  {% include '@bram_theme/layout/footer.html.twig' %}
+</div>
+

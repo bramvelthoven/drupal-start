@@ -1,0 +1,12 @@
+{% extends 'paragraph.html.twig' %}
+
+{% block paragraph_header %}
+  {{ parent() }}
+  {{ 'Printing the default content but also adding new stuff inside the paragraph_header block' }}
+{% endblock %}
+
+{% block paragraph_content %}
+  <div class="paragraph__content">
+    {{'Overwriting the paragraph_content block'}}
+  </div>
+{% endblock %}

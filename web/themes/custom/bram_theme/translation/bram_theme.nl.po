@@ -1,0 +1,25 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: bram_theme Theme\n"
+"POT-Creation-Date: 2023-06-01 09:00+0200\n"
+"PO-Revision-Date: 2023-06-01 09:00+0200\n"
+"Language-Team: Dutch\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+msgid "Skip to footer"
+msgstr "Overslaan en naar de footer gaan"
+
+msgid "Skip to search"
+msgstr "Overslaan en naar de zoekbalk gaan"
+
+msgid "Skip to menu"
+msgstr "Overslaan en naar de navigatie gaan"
+
+msgid "Go to previous slide"
+msgstr "Ga naar de vorige slide"
+
+msgid "Go to next slide"
+msgstr "Ga naar de volgende slide"

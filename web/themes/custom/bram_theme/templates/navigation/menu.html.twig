@@ -1,0 +1,41 @@
+{% import _self as menus %}
+{{ menus.menu_links(items, attributes, 0, menu_name) }}
+
+{% macro menu_links(items, attributes, menu_level, menu_name) %}
+  {% import _self as menus %}
+  {%
+    set menu_classes = [
+    'menu--' ~ menu_name|clean_class,
+    'menu',
+  ]
+  %}
+  {% if items %}
+    {% if menu_level == 0 %}
+      <ul{{ attributes.addClass(menu_classes) }}>
+    {% else %}
+  <ul class="menu">
+    {% endif %}
+    {% for item in items %}
+      {%
+        set item_classes = [
+        'menu__item',
+        item.is_expanded ? 'menu__item--expanded',
+        item.is_collapsed ? 'menu__item--collapsed',
+        item.in_active_trail ? 'menu__item--active-trail',
+      ]
+      %}
+      {%
+        set link_classes = [
+        'menu__item__link',
+      ]
+      %}
+      <li{{ item.attributes.addClass(item_classes) }}>
+        {{ link( item.title, item.url, item.attributes.addClass(link_classes).removeClass(item_classes) ) }}
+        {% if item.below %}
+          {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+{% endmacro %}

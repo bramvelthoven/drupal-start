@@ -1,0 +1,39 @@
+{% set classes = [
+  'slider'
+  ]
+%}
+
+<div {{ attributes.addClass(classes) }}>
+  <div class="slider__title">
+    {% include active_theme() ~ ':title' with {
+      'title': title,
+    } only %}
+  </div>
+  <div class="slider__swiper swiper">
+    <div class="slider__wrapper swiper-wrapper">
+      {% for item in items %}
+        <div class="slider__slide swiper-slide">
+          {{ item }}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="slider__arrows">
+    <div class="slider__prev slider__arrow">
+      {% include active_theme() ~':buttonlink' with {
+        'label': 'Go to previous slide',
+        'link_type': 'button',
+        'icon_type': 'chevron-left',
+        'icon_only': true
+      } only %}
+    </div>
+    <div class="slider__next slider__arrow">
+      {% include active_theme() ~':buttonlink' with {
+        'label': 'Go to next slide',
+        'link_type': 'button',
+        'icon_type': 'chevron-right',
+        'icon_only': true
+      } only %}
+    </div>
+  </div>
+</div>

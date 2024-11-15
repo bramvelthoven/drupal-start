@@ -1,0 +1,27 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+name: Slider
+status: stable
+description: A responsive, customizable slider with smooth transitions, using Swiper.
+props:
+  type: object
+  required:
+    - items
+  properties:
+    title:
+      type: string
+      title: Title
+      description: Slider title
+      examples:
+        - Lorum ipsum
+    items:
+      type: object
+      title: Items
+      description: Slider items
+      examples:
+        - drupal_view('events', 'block_1')
+libraryOverrides:
+  css:
+    component:
+      ../../../dist/components/molecules/slider/slider.css: { }
+  js:
+    ../../../dist/components/molecules/slider/slider.js: { }

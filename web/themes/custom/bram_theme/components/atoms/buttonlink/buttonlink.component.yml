@@ -1,0 +1,62 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
+name: Link
+status: stable
+description: This component produces an anchor tag with styling only us links that redirect to a new page.
+group: Navigation
+libraryDependencies:
+  - bram_theme/fontawesome
+props:
+  type: object
+  required:
+    - label
+  properties:
+    link_type:
+      type: string
+      title: Type
+      enum:
+        - button
+        - link
+    link_style:
+      type: string
+      title: Style
+      description: For variants
+    target:
+      type: string
+      title: Target
+      examples:
+        - _blank
+    href:
+      type: string
+      title: href
+      examples:
+        - https://example.org
+    label:
+      type: string
+      title: Label
+      examples:
+        - Link name
+    sr_label:
+      type: string
+      title: Screen reader label
+    icon_style:
+      type: string
+      title: Icon style
+    icon_type:
+      type: string
+      title: Icon type
+    icon_only:
+      type: boolean
+      title: Icon Only
+    aria_controls:
+      type: string
+      title: Aria controls
+    aria_expanded:
+      type: string
+      title: Aria expanded
+    id:
+      type: string
+      title: Id
+libraryOverrides:
+  css:
+    component:
+      ../../../dist/components/atoms/buttonlink/buttonlink.css: { }
