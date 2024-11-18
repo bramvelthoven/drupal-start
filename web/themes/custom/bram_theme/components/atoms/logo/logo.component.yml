@@ -1,0 +1,24 @@
+$schema: https://git.drupalcode.org/project/sdc/-/raw/1.x/src/metadata.schema.json
+status: stable
+name: Logo
+props:
+  type: object
+  properties:
+    logo:
+      type: string
+      title: Logo
+    slogan:
+      type: string
+      title: Slogan
+    dark_mode:
+      type: string
+      title: dark mode
+    extra_classes:
+      type: string
+      title: Extra classes
+      examples:
+        - col-md-6 custom-class another-class
+libraryOverrides:
+  css:
+    component:
+      ../../../dist/components/logo/logo.css: { }

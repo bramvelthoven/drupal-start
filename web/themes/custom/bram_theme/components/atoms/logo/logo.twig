@@ -1,0 +1,16 @@
+{% set classes = [
+  'logo',
+  extra_classes,
+] %}
+
+{% set sdc_logo_attribute = create_attribute() %}
+
+<div {{ sdc_logo_attribute.addClass(classes) }} >
+    {% if dark_mode %}
+    <a class="site-logo" href="{{ path('<front>') }}" rel="home" title="{{ 'Link to homepage'|t }}">
+      {{ source(componentMetadata.path ~ '/assets/logo-dark.svg') }}
+    </a>
+    {% else %}
+    {{ logo }}
+  {% endif %}
+</div>

@@ -1,0 +1,12 @@
+{% set classes = [
+  'menu',
+  extra_classes,
+]
+%}
+
+{% set sdc_menu_attribute = create_attribute() %}
+
+<div {{ sdc_menu_attribute.addClass(classes, id) }} >
+  {{ menu }}
+  {{ favorites }}
+</div>

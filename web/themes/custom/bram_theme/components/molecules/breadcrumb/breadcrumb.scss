@@ -1,0 +1,27 @@
+.breadcrumb {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-start;
+  padding: var(--padding-small) 0;
+  width: 100%;
+
+  li {
+    list-style: none;
+
+    a {
+      color: var(--color-font-primary);
+    }
+
+    &:after {
+      content: '>';
+      margin-left: 8px;
+    }
+
+    &:last-child:after {
+      content: '';
+      margin: 0;
+    }
+  }
+}

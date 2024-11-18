@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import 'https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap';
 
 :root {
   --inter: 'Inter', sans-serif;
@@ -17,7 +17,7 @@
 
 body {
   color: var(--dark-shades);
-  font-optical-sizing: auto;
   font-family: var(--inter), sans-serif;
+  font-optical-sizing: auto;
   font-size: var(--font-size-xs);
 }

@@ -1,0 +1,20 @@
+$schema: https://git.drupalcode.org/project/sdc/-/raw/1.x/src/metadata.schema.json
+name: Menu
+status: stable
+props:
+  type: object
+  required:
+    - menu
+  properties:
+    menu:
+      type: string
+      title: Menu
+    extra_classes:
+      type: string
+      title: Extra classes
+      examples:
+        - col-md-6 custom-class another-class
+libraryOverrides:
+  css:
+    component:
+      ../../../dist/components/menu/menu.css: { }

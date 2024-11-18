@@ -1,0 +1,24 @@
+$schema: https://git.drupalcode.org/project/sdc/-/raw/1.x/src/metadata.schema.json
+machineName: header
+status: stable
+name: Header
+props:
+  type: object
+  required:
+    - navigation
+  properties:
+    navigation:
+      type: string
+      title: Navigation
+    form:
+      type: string
+      title: Search form
+    extra_classes:
+      type: string
+      title: Extra classes
+      examples:
+        - col-md-6 custom-class another-class
+libraryOverrides:
+  css:
+    component:
+      ../../../dist/components/header/header.css: { }

@@ -1,0 +1,74 @@
+{% set classes = [
+  'header',
+  extra_classes,
+] %}
+
+{% set sdc_header_attribute = create_attribute().addClass(classes) %}
+
+<header {{ sdc_header_attribute }}>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        {% if logged_in %}
+          <div class="header__inner">
+            {% include 'glu:navigation' with {
+              'navigation': navigation,
+            } %}
+            <div class="header__right">
+              {% include 'glu:search' with {
+                'form': navigation.glu_search_form,
+                'glu': glu
+              } %}
+              {% include 'glu:dropdown' with {
+                'links': drupal_entity('block', 'glu_personallinks'),
+              }
+              %}
+              <a class="header__icon" href="{{ path('entity.user.edit_form', {'user': user.id}) }}">
+                {% include 'glu:icon' with {
+                  icon: 'settings',
+                  size: 'lg'
+                } %}
+              </a>
+              <a class="header__user" href="{{ path('entity.user.canonical', {'user': user.id}) }}">
+                {% if user_picture_tid %}
+                  {{ user_picture }}
+                {% else %}
+                  <p class="header__user-initials">{{ user_initials }}</p>
+                {% endif %}
+              </a>
+              <a class="header__icon" href="{{ path('user.logout') }}">
+                {% include 'glu:icon' with {
+                  icon: 'logout',
+                  size: 'lg'
+                } %}
+              </a>
+            </div>
+            <div class="header__right-mobile">
+              <a class="header__icon" href="{{ path('view.search.search') }}">
+                {% include 'glu:icon' with {
+                  icon: 'search',
+                  size: 'lg',
+                } %}
+              </a>
+              <div class="header__icon">
+                <span class="header__hamburger"></span>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  <div class="col-12">
+    <div class="header__menu">
+      <div class="container-fluid">
+        {% if logged_in %}
+          {% include 'glu:menu' with {
+            'menu': navigation.glu_main_menu,
+            'favorites': page.header.glu_favorites,
+          } only %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</header>

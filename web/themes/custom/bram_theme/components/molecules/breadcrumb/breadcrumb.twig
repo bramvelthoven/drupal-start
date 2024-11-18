@@ -1,0 +1,19 @@
+{% set classes = [
+  'breadcrumb',
+  variant ? 'breadcrumb--' ~ variant,
+  extra_classes,
+] %}
+
+{% set sdc_navigation_attribute = create_attribute() %}
+
+<ol {{ sdc_navigation_attribute.addClass(classes) }}>
+  {% for item in breadcrumb %}
+    <li>
+      {% if item.url %}
+        <a href="{{ item.url }}">{{ item.text|truncate(20, false, '...') }}</a>
+      {% else %}
+        {{ item.text }}
+      {% endif %}
+    </li>
+  {% endfor %}
+</ol>

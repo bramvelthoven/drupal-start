@@ -1,0 +1,18 @@
+@import '../../../src/scss/libraries/component';
+
+.logo {
+  flex-shrink: 0;
+
+  svg,
+  img {
+    height: 60px;
+    max-width: 200px;
+    width: auto;
+
+    @include media-breakpoint-down(md) {
+      height: 48px;
+      max-width: 165px;
+      width: auto;
+    }
+  }
+}

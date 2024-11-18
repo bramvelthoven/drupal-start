@@ -1,0 +1,15 @@
+{% set classes = [
+  'navigation',
+  variant ? 'navigation--' ~ variant,
+  extra_classes,
+]
+%}
+
+{% set sdc_navigation_attribute = create_attribute() %}
+
+<div {{ sdc_navigation_attribute.addClass(classes) }}>
+  {% include 'glu:logo' with {
+    'logo': navigation.glu_site_branding,
+    'dark_mode': dark_mode
+  } only %}
+</div>

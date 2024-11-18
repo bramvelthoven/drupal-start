@@ -1,0 +1,19 @@
+$schema: https://git.drupalcode.org/project/sdc/-/raw/1.x/src/metadata.schema.json
+machineName: navigation
+status: stable
+name: Breadcrumb
+props:
+  type: object
+  properties:
+    extra_classes:
+      type: string
+      title: Extra classes
+      examples:
+        - col-md-6 custom-class another-class
+    dark_mode:
+      type: string
+      title: dark_mode
+libraryOverrides:
+  css:
+    component:
+      ../../../dist/components/breadcrumb/breadcrumb.css: { }
